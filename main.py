@@ -120,7 +120,7 @@ def login():
             login_user(user)
             return redirect(url_for("get_all_posts", current_user=current_user))
 
-    return render_template("login.html", fomr=form)
+    return render_template("login.html", form=form)
 
 
 @app.route('/logout')
