@@ -109,7 +109,7 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.find_by(email=form.email.data).first()
+        user = User.query.filter_by(email=form.email.data).first()
         if not check_password_hash(user.password, form.password.data):
             flash("Invalid password")
             return redirect(url_for("login"))
